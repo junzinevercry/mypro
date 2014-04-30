@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlrewrite>
+	<rule>
+		<from>^/building.html$</from>
+		<to>/front/building.action</to>
+	</rule>
+
+	<rule>
+		<from>^/viewNews/(.*).html$</from>
+		<to>/front/gotoViewNews.action?newsId=$1&amp;current=viewNews</to>
+	</rule>
+	<rule>
+		<from>^/success.html$</from>
+		<to>/front/gotoRegistSuccess.action</to>
+	</rule>
+	<rule>
+		<from>^/index.html$</from>
+		<to>/front/index.action?current=index</to>
+	</rule>
+	<rule>
+		<from>^/register.html$</from>
+		<to>/front/index.action?current=register</to>
+	</rule>
+	<rule>
+		<from>^/aboutus.html$</from>
+		<to>/front/index.action?current=aboutus</to>
+	</rule>
+	<rule>
+		<from>^/products.html$</from>
+		<to>/front/products.action?current=products</to>
+	</rule>
+	<rule>
+		<from>^/server.html$</from>
+		<to>/front/serverFlowFowListByFront.action?current=server</to>
+	</rule>
+	<rule>
+		<from>^/viewServer.html$</from>
+		<to>/front/viewServerFlowByFront.action?current=viewServer</to>
+	</rule>
+	<rule>
+		<from>^/offer.html$</from>
+		<to>/front/offer.action?current=offer</to>
+	</rule>
+	<rule>
+		<from>^/show.html$</from>
+		<to>/front/index.action?current=show</to>
+	</rule>
+	<rule>
+		<from>^/sitemap.html$</from>
+		<to>/front/index.action?current=sitemap</to>
+	</rule>
+	<rule>
+		<from>^/contact.html$</from>
+		<to>/front/index.action?current=contact</to>
+	</rule>
+	<rule>
+		<from>^/login.html$</from>
+		<to>/background/member/gotoMemberLogin.action</to>
+	</rule>
+	<rule>
+		<from>^/member/logout.html$</from>
+		<to>/background/member/memberLogout.action</to>
+	</rule>
+	<rule>
+		<from>^/member/login.html$</from>
+		<to>/background/member/memberLogin.action?current=serveCenter</to>
+	</rule>
+	<rule>
+		<from>^/member/serveCenter.html$</from>
+		<to>/background/serveCentre/gotoServeCenter.action?current=serveCenter</to>
+	</rule>
+	<rule>
+		<from>^/member/commonQuestion.html$</from>
+		<to>/background/gotoCommonQuestionMemberList.action?current=commonQuestion</to>
+	</rule>
+	<rule>
+		<from>^/member/question.html$</from>
+		<to>/background/question/question.action?current=question</to>
+	</rule>
+	<rule>
+		<from>^/member/question/answer.html$</from>
+		<to>/background/question/answer.action</to>
+	</rule>
+	<rule>
+		<from>^/member/question/ask.html$</from>
+		<to>/background/question/ask.action</to>
+	</rule>
+	<rule>
+		<from>^/member/question/doAsk.html$</from>
+		<to>/background/question/doAsk.action</to>
+	</rule>
+	<rule>
+		<from>^/member/products.html$</from>
+		<to>/background/products.action?current=products</to>
+	</rule>
+	<rule>
+		<from>^/member/serverPath.html$</from>
+		<to>/background/serverPath/gotoServerPath.action</to>
+	</rule>
+	<rule>
+		<from>^/member/serverFlowList.html$</from>
+		<to>/background/serverFlowFowListByMember.action?current=serverFlowList</to>
+	</rule>
+	<rule>
+		<from>^/member/viewServerFlow.html$</from>
+		<to>/background/viewServerFlow.action?current=viewServerFlow</to>
+	</rule>
+	
+    <!--     <rule>
+            <from>^/catalog/list-p-([0-9]+)-([0-9]+)\.html$</from>
+            <to>/controler/PageControler?pcid=$1&amp;cid=$2&amp;groups=turboshop_product|turboshop_catalog|turboshop_config&amp;page=com.cwc.app.servlet.page.catalog.ListP</to>
+        </rule>
+               
+        <rule>
+            <from>^/catalog/list-si-([0-9.]+)-([0-9.]+)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)\.html$</from>
+            <to>/controler/PageControler?price_st=$1&amp;price_en=$2&amp;pcid=$3&amp;cid=$4&amp;type=$5&amp;p=$6&amp;groups=turboshop_product|turboshop_catalog|turboshop_config|turboshop_brand&amp;page=com.cwc.app.servlet.page.catalog.ListSI</to>
+        </rule>
+        <rule>
+            <from>^/catalog/all_catalog.html$</from>
+            <to>/controler/PageControler?groups=turboshop_brand|turboshop_product|turboshop_catalog|turboshop_config&amp;page=com.cwc.app.servlet.page.catalog.AllCatalog</to>
+        </rule>
+
+	    <rule>
+            <from>^/product/recommend_f.html</from>
+            <to>/controler/PageControler?nocache=1&amp;page=com.cwc.app.servlet.page.product.RecommendFPage</to>
+        </rule>
+	    
+	    <rule>
+            <from>^/404.html$</from>
+            <to>/controler/PageControler?nocache=1&amp;page=com.cwc.app.servlet.page.SystemPageNotFound</to>
+        </rule>
+        <rule>
+            <from>^/user/([0-9]+)/.html$</from>
+            <to>/profile.action?id=$1</to>
+        </rule> -->
+        <!-- suyi begin-->
+        <!-- back end begin -->
+         <!-- <rule>
+            <from>^/investigation/investigation_modify.html</from>
+            <to>investigation_modifyInvestigationDetail.action</to>
+        </rule>
+         <rule>
+            <from>^/investigation/investigation_investigationType.html</from>
+            <to>investigation_investigationTypeListUI.action</to>
+        </rule>
+        
+        <rule>
+        	<from>^/investigation/investigationDetaiList.html</from>
+        	<to>investigation_investigationDetailListUI.action</to>
+        </rule>
+        
+        <rule>
+        	<from>^/investigation/investigationDetaiList_([0-9]+).html$</from>
+        	<to>investigation_investigationDetailListUI.action?investigationTypeId=$1</to>
+        </rule>
+        
+        <rule>
+        	<from>^/investigation/modifyInvestigationTypeName.html</from>
+        	<to>investigation_modifyInvestigationTypeName.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/investigation/showInvestigation_([0-9]+)_([0-9]+).html$</from>
+        	<to>investigation_showInvestigation.action?investigationTypeId=$1&amp;isShow=$2</to>
+        </rule>
+        
+        <rule>
+        	<from>/investigation/addInvestigationType.html</from>
+        	<to>/investigation/investigation_addinvestigationType.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/investigation/delete.html</from>
+        	<to>/investigation/investigation_deleteInvestigationDetail.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/investigation/add.html</from>
+        	<to>/investigation/investigation_addInvestigationDetail.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/oper_log/logList.html</from>
+        	<to>/operated_log/log_queryOperatedListUI.action</to>
+        </rule>
+        
+        
+        <rule>
+        	<from>/QA/QAList.html</from>
+        	<to>/question_assistance/assistance_questionAssistanceListUI.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/QA/operQA.html</from>
+        	<to>/question_assistance/assistance_operQuestionAssistance.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/QA/operQA_([0-9]+).html</from>
+        	<to>/question_assistance/assistance_operQuestionAssistanceUI.action?questionAssistanceId=$1</to>
+        </rule>
+        
+        <rule>
+          <from>/QA/operQAUI.html</from>
+          <to>/question_assistance/assistance_operQuestionAssistanceUI.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/QA/delQA_([0-9]+).html</from>
+        	<to>/question_assistance/assistance_deleteQuestionAssistance.action?questionAssistanceId=$1</to>
+        </rule>
+         back end end
+        front  page
+        <rule>
+        	<from>/addVote.html</from>
+        	<to>/index/index_addVoteForInvestigation.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/voteResult.html</from>
+        	<to>/index/index_forwardVoteResult.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/organizationListUI_([0-9]+).html</from>
+        	<to>/index/index_forwardOrganizationInfoListUI.action?organizationInfoType=$1</to>
+        </rule>
+        
+          <rule>
+        	<from>/organizationListUI.html</from>
+        	<to>/index/index_forwardOrganizationInfoListUI.action</to>
+        </rule>
+        
+        
+        <rule>
+        	<from>/orgaizationUI_([0-9]+)_([0-9]+).html</from>
+        	<to>/index/index_forwardOrgaizationInfoUI.action?orgId=$1&amp;organizationInfoType=$2</to>
+        </rule>
+        
+        <rule>
+        	<from>/projectListUI.html</from>
+        	<to>/index/index_forwardProjectInfoListUI.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/projectUI_([0-9]+).html</from>
+        	<to>/index/index_forwardProjectInfoUI.action?projectInfoId=$1</to>
+        </rule>
+        <rule>
+        	<from>/frontQAList.html</from>
+        	<to>/index/index_forwardQAListUI.action</to>
+        </rule>
+        
+        <rule>
+        	<from>/frontQADetail_([0-9+]+).html</from>
+        	<to>/index/index_forwardQADetailUI.action?questionAssistanceId=$1</to>
+        </rule>
+        
+         <rule>
+        	<from>/clinicorgaizationUI.html</from>
+        	<to>/index/index_forwardClinicOrganizationInfoListUI.action</to>
+        </rule>
+        
+         <rule>
+        	<from>/clinicorgaizationUI_([0-9]+)_([0-9]+).html</from>
+        	<to>/index/index_forwardClinicOrgaizationInfoUI.action?orgId=$1&amp;organizationInfoType=$2</to>
+        </rule>
+        forwardClinicOrgaizationInfoUI
+        front page
+        suyi end
+        
+        
+        导航 首页
+         <rule>
+            <from>^/index.html$</from>
+            <to>/index/index_goIndex.action</to>
+        </rule>
+        导航 首页 
+        
+        wangkai begin
+        
+                       front_header.jsp
+         <rule>
+            <from>^/index/newslist_([0-9]+).html</from>
+            <to>/index/index_forwardNewsListUI.action?newsType=$1</to>
+        </rule>
+                       newsListUI.jsp
+          <rule>
+            <from>^/news/newsInfo_([0-9]+).html</from>
+            <to> /index/index_showNewsInfo.action?newsId=$1</to>
+        </rule>
+         <rule>
+            <from>^/news/newslist.html</from>
+            <to> /index/index_forwardNewsListUI.action</to>
+        </rule>
+         <rule>
+            <from>^/index/newslist_title_([0-9]+)_([a-zA-Z0-9]+).html</from>
+            <to>/index/index_forwardNewsListUI.action?newsType=$1&amp;createDate=$2</to>
+        </rule>
+                 
+       
+       后台
+           LEFT.JSP
+                 跳转 
+        <rule>
+            <from>^/admin/news/newsAdd.html</from>
+            <to> /news_gotoNewsAdmin.action</to>
+        </rule>
+        <rule>
+            <from>^/admin/news/news_Add.html</from>
+            <to>/news/news_add.action</to>
+        </rule>
+                列表
+        <rule>
+            <from>^/admin/news/newsList.html</from>
+            <to> /news_showList.action</to>
+        </rule>
+                主新闻列表
+        <rule>
+            <from>^/admin/news/newsHeadList.html</from>
+            <to>/news_showHeadNews.action</to>
+        </rule>
+           news_Manger.jsp
+               批量操作
+        <rule>
+            <from>^/admin/news/newsMangers_([a-z]|[A-Z]+).html</from>
+            <to>/news_mangerManyNewses.action?flag=$1</to>
+        </rule>
+               单条操作
+          <rule>
+            <from>^/admin/news/newsManger_([a-z]|[A-Z]+)_([0-9]+).html</from>
+            <to>/news_mangerNews.action?flag=$1&amp;newsId=$2</to>
+        </rule>
+         <rule>
+            <from>^/admin/news/newsInfo_([a-z]|[A-Z]+)_([0-9]+).html</from>
+            <to>/news_showInfo.action?flag=$1&amp;newsId=$2</to>
+        </rule>
+           <rule>
+            <from>^/admin/news/newsOrder_([0-9]+).html</from>
+            <to>/news_orderManger.action?id=$1</to>
+            
+        </rule>
+        <rule>
+            <from>^/admin/news/newsDoOrder.html</from>
+            <to>/news_doOrder.action</to>
+            
+        </rule>
+        <rule>
+            <from>^/admin/news/newsgoOrder.html</from>
+            <to>/news_goNewsOrder.action</to>
+        </rule>
+        <rule>
+            <from>^/admin/news/newsRemoveOrder_([0-9]+).html</from>
+            <to>/news_removeNewsOrder.action?newsId=$1</to>
+        </rule>
+       
+        
+          a href="news_showInfo.action?flag=EDIT&newsId=${dto.id}">编辑|</a>
+                    <a href="news_showInfo.action?&newsId=${dto.id}">查看|</a>
+					<a href="news_mangerNews.action?flag=putOut&newsId=${dto.id}">发表|</a>
+					<a href="news_mangerNews.action?flag=DEL&newsId=${dto.id}" onclick="javascript:return confirm('您确定要删除此条信息吗？')">删除</a>
+					
+       
+        wangkai  end
+        
+        
+        
+        
+      zhangjun begin
+        front
+	        gotoUserOperationList
+	        <rule>
+	            <from>^/user/goto/operation/list/b3169f6f80034c9086ad.html$</from>
+	            <to type="forward">/user/user_gotoUserOperationList.action</to>
+	        </rule>
+	        gotoUserRegist
+	        <rule>
+	            <from>^/user/goto/regist/38e7c55f56e2477a839d.html$</from>
+	            <to type="forward">/user_gotoUserRegist.action</to>
+	        </rule>
+	        gotoUserModify
+	        <rule>
+	            <from>^/user/goto/modify/3igEaslbI4KgvrGEesubmiObtc5r23g.html$</from>
+	            <to type="forward">/user/user_gotoUserModify.action</to>
+	        </rule>
+	        gotoInvestigationList
+	        <rule>
+	            <from>^/user/goto/investigation/list/0wiP39zuy1Qv([0-9]*)zj_tmb([a-zA-Z]*).html$</from>
+	            <to type="forward">/user/user_gotoInvestigationList.action?flag=$1&amp;time=$2</to>
+	        </rule>
+	        gotoUserInvestigationDetail
+	        <rule>
+	            <from>^/user/goto/investigation/detail/ziM3oxK952([0-9]+)53q4x8([0-9]+).html$</from>
+	            <to type="forward">/user/user_gotoUserInvestigationDetail.action?flag=$1&amp;projectId=$2</to>
+	        </rule>
+	        gotoUserSignUp
+	        <rule>
+	            <from>^/user/goto/signup/wv4ha3WpfW80Mg([0-9]+)op56X8P([0-9]+).html$</from>
+	            <to type="forward">/user/user_gotoUserSignUp.action?flag=$1&amp;projectId=$2</to>
+	        </rule>
+	        
+	        doLogout
+	        <rule>
+	            <from>^/user/do/logout/fcda0222184a4b5bb12b.html$</from>
+	            <to type="forward">/user/user_doLogout.action</to>
+	        </rule>
+	        doUserModify
+	        <rule>
+	            <from>^/user/do/modify/0d0b6e4331ee4e1fb06a.html$</from>
+	            <to type="forward">/user/user_doUserModify.action</to>
+	        </rule>
+	        doUserRegist
+	        <rule>
+	            <from>^/user/do/regist/da4d525a6e5b411bb9b1.html$</from>
+	            <to type="forward">/user_doUserRegist.action</to>
+	        </rule>
+	        doUserSignUp
+	        <rule>
+	            <from>^/user/do/signup/79bedc9d233([0-9]+)548bf953e.html$</from>
+	            <to type="forward">/user/user_doUserSignUp.action?projectId=$1</to>
+	        </rule>
+        backend
+	        gotoQueryUser
+	        <rule>
+	            <from>^/mngr/goto/query/user/8bad1b2a06394399a27a.html$</from>
+	            <to type="forward">/manager_gotoQueryUser.action</to>
+	        </rule>
+	        gotoMngrLogin
+	        <rule>
+	            <from>^/mngr/goto/login.html$</from>
+	            <to type="forward">/manager_gotoMngrLogin.action</to>
+	        </rule>
+	        doMngrLogin
+	        <rule>
+	            <from>^/mngr/do/login.html$</from>
+	            <to type="forward">/manager/login_doMngrLogin.action</to>
+	        </rule>
+	        doMngrLogout
+	        <rule>
+	            <from>^/mngr/do/logout.html$</from>
+	            <to type="forward">/manager/login_doMngrLogout.action</to>
+	        </rule>
+	        gotoModifyUser
+	        <rule>
+	            <from>^/mngr/goto/modify/user/861(.*)e4(.*)61fb(.*)c504f57(.*)81e0/41c10(.*)c8ecd30(.*)4b3c9(.*)e58.html$</from>
+	            <to type="forward">/manager_modifyUser.action?id=$1&amp;currentPage=$2&amp;queryIsStop=$3&amp;queryIsApprove=$4&amp;queryUserName=$5&amp;queryRealName=$6&amp;queryIdCard=$7</to>
+	        </rule>
+	        doModifyUser
+	        <rule>
+	            <from>^/mngr/do/modify/user/84122(.*)e2(.*)a2e1940(.*)c2892d/66ac646f(.*)523f(.*)410c9(.*)e4f.html$</from>
+	            <to type="forward">/manager_doModifyUser.action?currentPage=$1&amp;queryIsStop=$2&amp;queryIsApprove=$3&amp;queryUserName=$4&amp;queryRealName=$5&amp;queryIdCard=$6</to>
+	        </rule>
+	        gotoViesUser
+	        <rule>
+	            <from>^/mngr/goto/view/user/4b74(.*)09f7c(.*)82249(.*)089(.*)1eb/99f177(.*)6d962(.*)14b72a(.*)d98.html$</from>
+	            <to type="forward">/manager_viewUser.action?id=$1&amp;currentPage=$2&amp;queryIsStop=$3&amp;queryIsApprove=$4&amp;queryUserName=$5&amp;queryRealName=$6&amp;queryIdCard=$7</to>
+	        </rule>
+	        doDelete
+	        <rule>
+	            <from>^/mngr/do/delete/user/cea4([0-9]+)255b92([0-9]+)a14(.*)e0b8(.*)375/7c62ca(.*)fb79(.*)264(.*)8b49a17.html$</from>
+	            <to type="forward">/manager_delUser.action?id=$1&amp;currentPage=$2&amp;queryIsStop=$3&amp;queryIsApprove=$4&amp;queryUserName=$5&amp;queryRealName=$6&amp;queryIdCard=$7</to>
+	        </rule>
+	        doResetPassword
+	        <rule>
+	            <from>^/mngr/do/reset/password/b31dc(.*)ff0f1(.*)25412(.*)a91(.*)5f/d337(.*)bced492(.*)e4ad(.*)abc2d.html$</from>
+	            <to type="forward">/manager_doResetPassword.action?id=$1&amp;currentPage=$2&amp;queryIsStop=$3&amp;queryIsApprove=$4&amp;queryUserName=$5&amp;queryRealName=$6&amp;queryIdCard=$7</to>
+	        </rule>
+	        doAllStop
+	        <rule>
+	            <from>^/mngr/do/all/stop/user/5_8_8_6_1(.*)f_b_3_f_a_4_84be7(.*)ae1d.html$</from>
+	            <to type="forward">/manager_doAllStop.action?checked=$1&amp;status=$2</to>
+	        </rule>
+	        
+        zhangjun  end
+        
+        
+        
+        
+          wanggang begin
+         <rule>
+            <from>^/commentIndex/comment_commentEntity/([0-9]+).html$</from>
+            <to>/commentIndex/comment_commentEntity.action?id=$1</to>
+        </rule>
+        <rule>
+            <from>^/commentIndex/comment_commentModify_([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+).html$</from>
+            <to>/commentIndex/comment_commentModify.action?status=$1&amp;seachStatus=$2&amp;currentPage=$3&amp;ids=$4</to>
+        </rule>
+        <rule>
+            <from>^/commentIndex/comment_commentDel_([0-9]+)-([0-9]+)-([0-9]+).html$</from>
+            <to>/commentIndex/comment_commentDel.action?seachStatus=$1&amp;currentPage=$2&amp;ids=$3</to>
+        </rule>
+        
+        
+        <rule>
+            <from>^/compliantIndex/compliant_compliantEntity/([0-9]+).html$</from>
+            <to>/compliantIndex/compliant_compliantEntity.action?id=$1</to>
+        </rule>
+        <rule>
+            <from>^/compliantIndex/compliant_compliantModify_([0-9]*)-([0-9]*)-([0-9]*)-([0-9]*)-([0-9]*).html$</from>
+            <to>/compliantIndex/compliant_compliantModify.action?seachForwarding=$1&amp;seachStatus=$2&amp;status=$3&amp;currentPage=$4&amp;id=$5</to>
+        </rule>
+        <rule>
+            <from>^/compliantIndex/compliant_compliantDel_([0-9]*)-([0-9]*)-([0-9]*)-([0-9]*).html$</from>
+            <to>/compliantIndex/compliant_compliantDel.action?seachForwarding=$1&amp;seachStatus=$2&amp;currentPage=$3&amp;ids=$4</to>
+        </rule>
+        
+        
+        <rule>
+            <from>^/commentFront/commentFront_goProComment_([0-9]*)-([0-9]*).html$</from>
+            <to>/commentFront/commentFront_goProComment.action?belong_id=$1&amp;belong_type=$2</to>
+        </rule>
+        
+         <rule>
+            <from>^/commentFront/commentFront_goOrgComment_([0-9]*)-([0-9]*).html$</from>
+            <to>/commentFront/commentFront_goOrgComment.action?belong_id=$1&amp;belong_type=$2</to>
+        </rule>
+        
+           <rule>
+            <from>^/compliantIndex/compliant_goCompliantDetail_([0-9]*).html$</from>
+            <to>/compliantIndex/compliant_goCompliantDetail.action?id=$1</to>
+        </rule>
+        
+          <rule>
+            <from>^/compliantIndex/compliant_goCompliant_([0-9]*).html$</from>
+            <to>/compliantIndex/compliant_goCompliant.action?type=$1</to>
+        </rule>-->
+	
+	<!-- zhuyongpengend -->
+	<!-- zhangjun -->
+	<!-- zhangjunend -->
+	<!-- suyi -->
+	<!-- suyiend -->
+	<!-- jichen -->
+	<!-- jichenend -->    
+
+
+</urlrewrite>  
