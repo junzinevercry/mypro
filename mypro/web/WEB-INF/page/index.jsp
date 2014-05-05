@@ -111,17 +111,14 @@ window.setInterval(function(){
 </head>
 <body>
 	<div id="mainFrame">
-	<!--头部与导航start-->
 		<div id="hbox">
+			<!--头部与导航start-->
 			<div id="bs_bannercenter">
 				<div class="bs_logo"></div>
 				<div class="bs_right">
 					<ul>
 						<li style="padding-top:15px;"><a href="javascript:void(0)" onclick="gotoTools()"><img src="${ctx }/resource/images/home/cook.png" /></a></li>
 						<li style="padding-top:15px;"><a href="javascript:void(0)" onclick="gotoUpdatePassword()"><img src="${ctx }/resource/images/home/edit.png" /></a></li>
-						<c:if test="${not empty signPassword}">
-							<li style="padding-top:15px;"><a href="javascript:void(0)" onclick="gotoUpdateSignPassword()"><img src="${ctx }/resource/images/home/edit_name.png" /></a></li>
-						</c:if>
 						<li style="padding-top:13px;"><a href="${ctx }/logout.action"><img src="${ctx }/resource/images/home/exit.png" /></a></li>
 					</ul>
 				</div>
@@ -129,36 +126,35 @@ window.setInterval(function(){
 			
 
     
-    <div class="top">
-        <ul class="menu">
-		<c:if test="${fn:length(menuList) > 0}">
-			<c:forEach var="i" begin="0" end="${fn:length(menuList)-1}" step="1">
-				<c:set var="menuDto" value="${menuList[i]}" />
-				<c:if test="${i==0 }">
-					<li id="${i }" style="background:url(${ctx }/resource/images/home/banner_bg_hover.png) no-repeat; color:#fff">
+		    <div class="top">
+		        <ul class="menu">
+				<c:if test="${fn:length(menuList) > 0}">
+					<c:forEach var="i" begin="0" end="${fn:length(menuList)-1}" step="1">
+						<c:set var="menuDto" value="${menuList[i]}" />
+						<c:if test="${i==0 }">
+							<li id="${i }" style="background:url(${ctx }/resource/images/home/banner_bg_hover.png) no-repeat; color:#fff">
+						</c:if>
+						<c:if test="${i > 0 }">
+							<li style="background:url(${ctx }/resource/images/home/banner.png);color:#1d6f97" id="${i }" >
+						</c:if>
+						<c:if test="${fn:length(menuDto.subMenu) == 0}">
+							<a class="tablink nosub" onclick="javascript:gotoPage('${i }','${menuDto.url }','${menuDto.winName }')">${menuDto.name }</a>
+						</c:if>
+						<c:if test="${fn:length(menuDto.subMenu) > 0}">
+							<a class="tablink ">${menuDto.name }</a>
+							<ul>
+								<c:forEach var="j" begin="0" end="${fn:length(menuDto.subMenu)-1}" step="1">
+								<c:set var="menu" value="${menuDto.subMenu[j]}" />
+									<li>
+										<a onclick="javascript:gotoPage('${i }','${menu.url }','${menu.winName }')">${menu.name }</a>
+									</li>
+								</c:forEach>
+							</ul>
+						</c:if>
+					</c:forEach>
 				</c:if>
-				<c:if test="${i > 0 }">
-					<li style="background:url(${ctx }/resource/images/home/banner.png);color:#1d6f97" id="${i }" >
-				</c:if>
-					<c:if test="${fn:length(menuDto.subMenu) == 0}">
-						<a class="tablink nosub" onclick="javascript:gotoPage('${i }','${menuDto.url }','${menuDto.winName }')">${menuDto.name }</a>
-					</c:if>
-					<c:if test="${fn:length(menuDto.subMenu) > 0}">
-						<a class="tablink ">${menuDto.name }</a>
-						<ul>
-							<c:forEach var="j" begin="0" end="${fn:length(menuDto.subMenu)-1}" step="1">
-							<c:set var="menu" value="${menuDto.subMenu[j]}" />
-								<li>
-									<a onclick="javascript:gotoPage('${i }','${menu.url }','${menu.winName }')">${menu.name }</a>
-								</li>
-							</c:forEach>
-						</ul>
-					</c:if>
-				</li>
-			</c:forEach>
-		</c:if>
-        </ul>
-    </div>
+		        </ul>
+		    </div>
 <!--代码结束-->
 
 
@@ -169,7 +165,10 @@ window.setInterval(function(){
 		<table width="100%" cellpadding="0" cellspacing="0" class="table_border0">
 			<tr>
 			<!--左侧区域start-->
+				<!-- 
 				<td id="hideCon" class="ver01 ali01">
+				 -->
+				<td id="" class="ver01 ali01">
 					<div id="lbox">
 						<div id="lbox_topcenter">
 							<div id="lbox_topleft">
@@ -199,7 +198,10 @@ window.setInterval(function(){
 			<!--左侧区域end-->
 			
 			<!--分隔栏区域start-->
+				<!-- 
 				<td class="spliter main_shutiao" targetId="hideCon" beforeClickTip="" afterClickTip="" beforeClickClass="bs_leftArr" afterClickClass="bs_rightArr">
+				 -->
+				<td class="spliter main_shutiao" targetId="hideCon" beforeClickTip="" afterClickTip="" beforeClickClass="bs_leftArr" afterClickClass="bs_leftArr">
 		        </td>
 
 			<!--分隔栏区域end-->

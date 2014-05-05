@@ -87,6 +87,8 @@ public class LoginAction extends BaseAction {
         request.getSession().setAttribute(Constant.SYS_GLOBAL_LOGIN_SESSION_USER, this.getLoginUser());
         User user = this.userService.findUserById(this.getUserId());
         request.setAttribute("realName", user.getRealName());
+        List<MenuDto> menuList = menuService.listMenuForHomePage(this.getUserId());
+        request.setAttribute("menuList", menuList);
         return "index";
     }
 
@@ -127,28 +129,28 @@ public class LoginAction extends BaseAction {
     public String left(HttpServletRequest request) {
         UserDto loginUser = userService.findUserDtoById(this.getUserId());
         request.setAttribute("loginUser", loginUser);
-        Map<String, String> map = new HashMap<String, String>();
-        List<MenuDto> menuList = menuService.listMenuForHomePage(this.getUserId());
-        map.put("num", this.setLeftMenuNum("topic", menuList).get("winNum"));
-        request.setAttribute("num", map);
+        //        Map<String, String> map = new HashMap<String, String>();
+        //        List<MenuDto> menuList = menuService.listMenuForHomePage(this.getUserId());
+        //        map.put("num", this.setLeftMenuNum("topic", menuList).get("winNum"));
+        //        request.setAttribute("num", map);
         return "left";
     }
 
-    private Map<String, String> setLeftMenuNum(String winName, List<MenuDto> menuList) {
-        Map<String, String> result = new HashMap<String, String>();
-        int i = 0;
-        for (MenuDto menuDto : menuList) {
-            if (winName.equals(menuDto.getWinName())) {
-                result.put("winNum", i + "");
-                return result;
-            }
-            i += 1;
-        }
-        result.put("num", i + "");
-        result.put("url", "");
-        result.put("winName", "");
-        return result;
-    }
+    //    private Map<String, String> setLeftMenuNum(String winName, List<MenuDto> menuList) {
+    //        Map<String, String> result = new HashMap<String, String>();
+    //        int i = 0;
+    //        for (MenuDto menuDto : menuList) {
+    //            if (winName.equals(menuDto.getWinName())) {
+    //                result.put("winNum", i + "");
+    //                return result;
+    //            }
+    //            i += 1;
+    //        }
+    //        result.put("num", i + "");
+    //        result.put("url", "");
+    //        result.put("winName", "");
+    //        return result;
+    //    }
 
     @RequestMapping("/updateLeft.action")
     public String left(HttpServletRequest request, HttpServletResponse response) {

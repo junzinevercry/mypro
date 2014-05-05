@@ -1,7 +1,6 @@
 function choiceTextPage(pageSize, currentPage) {
 	var pageNumber = $("#pageNumber").val();
 	if (Number(currentPage) == Number(pageNumber)) {
-		alert("当前已经是需要查询的页码,请选择其他页码");
 		return;
 	}
 	if (pageNumber.length == 0) {
@@ -39,7 +38,6 @@ function gotoEndPage(pageNumber, currentPage) {
 	gotoPage(pageNumber);
 }
 function gotoPage(pageNumber) {
-	//alert(pageNumber);
 	if (!isNumTmd(pageNumber)) {
 		alert("请输入整数");
 		return;

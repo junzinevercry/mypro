@@ -21,11 +21,12 @@
 			  dataType : "json",
 			  data:{id:id,currentPage:currentPage},
 			  async : false,
-			  success:function(result){
-			  	if(result.type=='success'){
+			  success:function(data){
+				var result = data.info;
+			  	if(result=='success'){
 			  		alert('操作成功');
 			  		gotoRoleList();
-			  	} else if(result.type=='nozero') {
+			  	} else if(result=='nozero') {
 			  		alert('有使用此角色的用户，不可进行删除！');
 			  	}else{
 			  		alert('操作失败');

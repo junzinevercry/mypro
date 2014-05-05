@@ -17,8 +17,9 @@
 				url: '${ctx}/role/doUpdateRole.action',
 				type:'post',
 				data:$("#saveForm").serialize(),
-				//dataType:'json',
-				success: function(result) {
+				dataType:'json',
+				success: function(data) {
+					var result = data.info;
 					if(result=='success'){
 						callBackFunc('','home','gotoRoleList');
 						alert('处理成功!');

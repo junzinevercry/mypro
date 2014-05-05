@@ -83,7 +83,7 @@ public class MenuAction extends BaseAction {
         Menu menu = new Menu();
         super.fillGenericProperty(menu, true);
         getMenuFromReq(request, menu);
-        String returnValue = menuService.createMenu(menu);
+        String returnValue = menuService.doCreateMenu(menu);
         ajaxReturnJSON(request, response, returnValue);
     }
 
@@ -99,7 +99,7 @@ public class MenuAction extends BaseAction {
         Menu menu = menuService.findMenuById(id);
         super.fillGenericProperty(menu, false);
         getMenuFromReq(request, menu);
-        String returnValue = menuService.updateMenu(menu);
+        String returnValue = menuService.doUpdateMenu(menu);
         ajaxReturnJSON(request, response, returnValue);
     }
 
@@ -115,8 +115,8 @@ public class MenuAction extends BaseAction {
         request.setAttribute("currentPage", request.getParameter("currentPage"));
         Menu menu = new Menu();
         menu.setId(id);
-        menuService.deleteMenu(menu);
-        ajaxReturnJSON(request, response, "true");
+        String result = menuService.doDeleteMenu(menu);
+        ajaxReturnJSON(request, response, result);
     }
 
     /**

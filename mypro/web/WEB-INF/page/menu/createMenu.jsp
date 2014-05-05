@@ -12,8 +12,9 @@
 				url: '${ctx}/menu/doCreateMenu.action',
 				type:'post',
 				data:$("#saveForm").serialize(),
-				//dataType:'json',
-				success: function(result) {
+				dataType:'json',
+				success: function(data) {
+					var result = data.info;
 					if(result=="success"){
 						callBackFunc('','frmright','gotoMenuList');
 						alert('处理成功!');

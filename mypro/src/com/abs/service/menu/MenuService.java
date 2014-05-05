@@ -13,6 +13,7 @@ import com.abs.dao.menu.RoleMenuDao;
 import com.abs.dto.menu.MenuDto;
 import com.abs.entity.common.PageObject;
 import com.abs.entity.menu.Menu;
+import com.abs.service.base.BaseService;
 
 /**
  * <P><B>说明：</B>描述这个类的作用</P>
@@ -21,7 +22,7 @@ import com.abs.entity.menu.Menu;
  * @version 1.0
  */
 @Service
-public class MenuService {
+public class MenuService extends BaseService{
     @Autowired
     private MenuDao menuDao;
     @Autowired
@@ -135,12 +136,12 @@ public class MenuService {
      * @return
      */
     @Transactional
-    public String createMenu(Menu menu) {
+    public String doCreateMenu(Menu menu) {
         String returnValue = checkBefore(menu);
         if ("success".equals(returnValue)) {
             menuDao.createObject(menu);
         }
-        return returnValue;
+        return this.getJSONResult("info", "success");
     }
 
     /**
@@ -150,9 +151,10 @@ public class MenuService {
      * @param menu
      */
     @Transactional
-    public void deleteMenu(Menu menu) {
+    public String doDeleteMenu(Menu menu) {
         menuDao.deleteMenu(menu);
         roleMenuDao.deleteRoleMenuByMenuId(menu.getId());
+        return this.getJSONResult("info", "success");
     }
 
     /**
@@ -163,12 +165,12 @@ public class MenuService {
      * @return
      */
     @Transactional
-    public String updateMenu(Menu menu) {
+    public String doUpdateMenu(Menu menu) {
         String returnValue = checkBefore(menu);
         if ("success".equals(returnValue)) {
             menuDao.updateObject(menu);
         }
-        return returnValue;
+        return this.getJSONResult("info", "success");
     }
 
     private String checkBefore(Menu menu) {

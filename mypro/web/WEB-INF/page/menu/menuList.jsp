@@ -21,8 +21,9 @@
 			  dataType : "json",
 			  data:{id:id,currentPage:currentPage},
 			  async : false,
-			  success:function(result){
-			  	if(result==true){
+			  success: function(data) {
+				var result = data.info;
+			  	if(result=="success"){
 			  		alert('操作成功');
 			  		gotoMenuList();
 			  	} else {
