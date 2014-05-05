@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+				http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+       
+<beans:bean id="loggerListener" class="org.springframework.security.access.event.LoggerListener" />
+    <http auto-config="true" realm="cacaoa">
+        <intercept-url pattern="/index.jsp" filters="none" />
+        <intercept-url pattern="/resource/**" filters="none" />
+        <intercept-url pattern="/login.action*" filters="none" />
+        <intercept-url pattern="/loginout.action*" filters="none" />
+        <intercept-url pattern="/*.action*" access="ROLE_LOGIN" />
+        <access-denied-handler error-page="/login.action"/>
+        <form-login login-page="/login.action" default-target-url="/index.action" authentication-failure-url="/login.action?error_code=1"  always-use-default-target='true'/>  
+        <logout logout-success-url="/login.action" invalidate-session="true"/>
+        <session-management invalid-session-url="/loginout.action"/>
+    </http>
+    <authentication-manager alias="authenticationManager">  
+   		<authentication-provider user-service-ref="userDetailsManager"> 
+   			<password-encoder hash="sha" />
+   		</authentication-provider> 
+   	</authentication-manager>
+</beans:beans>

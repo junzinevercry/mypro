@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+	<tlib-version>1.0</tlib-version>
+	<short-name>elf</short-name>
+	<function>
+		<description>对截断的后的匹配字符进行加粗</description>
+		<name>setStrongInterceptString</name>
+		<function-class>com.abs.util.HighLightFunc</function-class>
+		<function-signature>java.lang.String setStrongInterceptString(java.lang.String,java.lang.String,java.lang.String)</function-signature>
+		<example>${elf:setStrongInterceptString(str1,str2,color)}</example>
+	</function>
+	
+	
+	<function>
+		<description>匹配字符进行加粗</description>
+		<name>setStrong</name>
+		<function-class>com.abs.util.HighLightFunc</function-class>
+		<function-signature>java.lang.String setStrong(java.lang.String,java.lang.String,java.lang.String)</function-signature>
+		<example>${elf:setStrong(str1,str2,color)}</example>
+	</function>
+	
+		<function>
+		<description>获取当前服务器时间</description>
+		<name>getTodayDate</name>
+		<function-class>com.abs.util.HighLightFunc</function-class>
+		<function-signature>java.lang.String getTodayDate(java.lang.String)</function-signature>
+		<example>${elf:getTodayDate(format)}</example>
+	</function>
+</taglib>
